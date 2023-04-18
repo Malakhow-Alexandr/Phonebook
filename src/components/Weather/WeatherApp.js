@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { ReactComponent as Forecast } from '../../images/forecast.svg';
+import { toast } from 'react-toastify';
 import styles from './WeatherApp.module.css';
-
-import TextField from '@mui/material/TextField';
 
 export const Weather = () => {
   const [query, setQuery] = useState('');
@@ -53,6 +51,9 @@ export const Weather = () => {
       )
         .then(resp => resp.json())
         .then(data => {
+          if (data.message === 'city not found') {
+            toast.error(data.message);
+          }
           setWeather({ data: data, error: false });
         })
         .catch(error => {
@@ -66,15 +67,11 @@ export const Weather = () => {
   return (
     <div className={styles.forecast}>
       <div className={styles.wrapper}>
-        <div>
-          <Forecast className={styles.weather} />
-        </div>
         <div className={styles.wrapper_search}>
           <h2 className={styles.date}>{toDate()}</h2>
-          <TextField
-            id="outlined-basic"
-            label="City"
-            variant="outlined"
+          <input
+            placeholder="City"
+            className={styles.input_field}
             autoFocus
             type="text"
             name="query"
@@ -103,15 +100,12 @@ export const Weather = () => {
                     alt={weather.data.weather[0].description}
                   />
 
-                  <h2 className={styles.temp}>
+                  <p className={styles.temp}>
                     {Math.round(weather.data.main.temp)}
                     <span> &deg;C </span>
-                  </h2>
+                  </p>
                 </div>
 
-                <p className={styles.color}>
-                  {weather.data.weather[0].description.toUpperCase()}
-                </p>
                 <p className={styles.color}>
                   Wind Speed: {weather.data.wind.speed}m/s
                 </p>

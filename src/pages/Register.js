@@ -1,9 +1,10 @@
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
+import { PagesTitleStyled } from 'components/PagesTitle/PagesTitle.styled';
 
 export default function Register() {
   return (
     <div>
-      <title>Registration</title>
+      <PagesTitleStyled>Phonebook Registration</PagesTitleStyled>
 
       <RegisterForm />
     </div>

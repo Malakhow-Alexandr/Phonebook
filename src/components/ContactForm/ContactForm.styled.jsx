@@ -20,7 +20,7 @@ export const Label = styled.label`
 
 export const StyledErrorMessage = styled.p`
   position: absolute;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Alkatra', sans-serif;
   top: 6px;
   left: 250px;
   font-size: 14px;

@@ -1,6 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
-import css from './LoginForm.module.css';
+import { LoginFormStyled } from './LoginForm.styled';
+import {
+  InputWrapper,
+  TextFieldStyled,
+  GoMailStyled,
+  GoPasswordStyled,
+  ButtonStyled,
+} from 'components/RegisterForm/RegisterForm.styled';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -18,16 +25,34 @@ export const LoginForm = () => {
   };
 
   return (
-    <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label className={css.label}>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <LoginFormStyled onSubmit={handleSubmit} autoComplete="off">
+      <InputWrapper>
+        <GoMailStyled />
+        <TextFieldStyled
+          required
+          type="email"
+          name="email"
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
+          size="small"
+        />
+      </InputWrapper>
+      <InputWrapper>
+        <GoPasswordStyled />
+        <TextFieldStyled
+          required
+          type="password"
+          name="password"
+          id="outlined-basic"
+          label="Password"
+          variant="outlined"
+          size="small"
+        />
+      </InputWrapper>
+      <ButtonStyled type="submit" variant="contained">
+        Log In
+      </ButtonStyled>
+    </LoginFormStyled>
   );
 };

@@ -1,10 +1,19 @@
-import { Container } from 'components/Container/Container.styled';
+import {
+  HomeContainer,
+  HomeTitleContainer,
+} from 'components/Container/Container.styled';
 import { HomePageTitleStyled } from 'components/PagesTitle/HomePageTItle';
+import { PhoneBookDemo } from 'components/PhonebookDemo/PhoneBookDemo';
 
 export default function Home() {
   return (
-    <Container>
-      <HomePageTitleStyled>Phonebook</HomePageTitleStyled>
-    </Container>
+    <>
+      <HomeContainer>
+        <HomeTitleContainer>
+          <HomePageTitleStyled>Phonebook</HomePageTitleStyled>
+        </HomeTitleContainer>
+        <PhoneBookDemo />
+      </HomeContainer>
+    </>
   );
 }

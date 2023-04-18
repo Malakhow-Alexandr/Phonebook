@@ -15,3 +15,26 @@ export const Container = styled.div`
   color: #fff;
   box-shadow: rgb(0 0 0 / 50%) 0px 2px 7px;
 `;
+
+export const HomeContainer = styled.div`
+  position: relative;
+  width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f0f1f3;
+  align-items: center;
+`;
+
+export const HomeTitleContainer = styled.div`
+  border-radius: 5px;
+  width: 600px;
+  height: 80px;
+  margin: auto;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  background: #31302f;
+  align-items: center;
+`;

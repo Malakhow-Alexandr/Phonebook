@@ -9,7 +9,8 @@ export const SectionStyled = styled.section`
 `;
 export const Title = styled.h2`
   text-align: center;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Alkatra', sans-serif;
+  font-weight: 700;
 
   color: #f08307;
   margin: 0;

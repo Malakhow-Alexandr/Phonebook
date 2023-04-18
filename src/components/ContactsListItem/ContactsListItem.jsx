@@ -10,8 +10,9 @@ import { Confirm } from 'components/Confirm/Confirm';
 import PropTypes from 'prop-types';
 import {
   ListItemStyled,
-  ButtonListItem,
+  ButtonDeleteListItem,
   ContactDesc,
+  ButtonEditListItem,
 } from './ContactListItem.styled';
 import { toast } from 'react-toastify';
 
@@ -34,24 +35,24 @@ export const ContactListItem = ({ id, name, number }) => {
         ) : (
           <>
             {!isEdit && (
-              <button
+              <ButtonEditListItem
                 onClick={() => {
                   setIsEdit(true);
                 }}
               >
                 Edit
-              </button>
+              </ButtonEditListItem>
             )}
-            <ButtonListItem
+            <ButtonDeleteListItem
               disabled={isLoading}
               onClick={() => {
                 setOpenConfirm(true);
               }}
             >
               <span>
-                {isLoading ? <Dna height="40" width="40" /> : 'Delete'}
+                {isLoading ? <Dna height="40" width="30" /> : 'Delete'}
               </span>
-            </ButtonListItem>
+            </ButtonDeleteListItem>
             <ContactDesc>{formatNumber(number)}</ContactDesc>
             <ContactDesc>{formatName(name)} :</ContactDesc>
           </>

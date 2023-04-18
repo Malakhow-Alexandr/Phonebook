@@ -11,25 +11,25 @@ export const ListItemStyled = styled.li`
 export const ContactDesc = styled.p`
   margin: 0;
   font-size: 17px;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 500;
+  font-family: 'Alkatra', sans-serif;
+  font-weight: 400;
   color: #fff;
   transition: color 250ms ease-in-out;
 `;
 
-export const ButtonListItem = styled.button`
+export const ButtonDeleteListItem = styled.button`
   display: block;
   margin-left: auto;
   border: none;
   border-radius: 5px;
-  width: 130px;
+  width: 90px;
   height: 40px;
   color: #fff;
   padding: 0;
   line-height: 42px;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Alkatra', sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   background: #f08307;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -71,6 +71,73 @@ export const ButtonListItem = styled.button`
   }
   &:hover ~ p {
     color: red;
+  }
+  &:disabled {
+    background: #aea8b3;
+    background: linear-gradient(0deg, #958a97 0%, #a89da8 100%);
+    &:before,
+    &:after {
+      height: 0;
+      background: grey;
+      box-shadow: none;
+      transition: 0ms ease all;
+    }
+  }
+`;
+
+export const ButtonEditListItem = styled.button`
+  display: block;
+  border: none;
+  border-radius: 5px;
+  width: 90px;
+  height: 40px;
+  color: #fff;
+  padding: 0;
+  line-height: 42px;
+  font-family: 'Alkatra', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background: #f08307;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+
+  &:hover {
+    color: #29c414;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    height: 2px;
+    background: #36922a;
+    box-shadow: -1px -1px 5px 0px #36922a, 7px 7px 20px 0px #0003,
+      4px 4px 5px 0px #0002;
+    transition: 400ms ease all;
+  }
+
+  &:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+  &:hover:before,
+  &:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+  }
+  &:hover ~ p {
+    color: #36922a;
   }
   &:disabled {
     background: #aea8b3;

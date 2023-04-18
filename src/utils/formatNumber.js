@@ -1,39 +1,47 @@
-export const formatLittleNumber = number => {
-  const formattedNumber = String(number).padStart(7, '0');
-  const firstPart = formattedNumber.slice(0, 3);
-  const secondPart = formattedNumber.slice(3, 5);
-  const thirdPart = formattedNumber.slice(5);
-  return `${firstPart}-${secondPart}-${thirdPart}`;
-};
-
-export const formatLargeNumber = number => {
-  const digits = number.replace(/\D/g, '');
-
-  if (digits.length !== 10) {
-    return number;
+export const formatNumber = phoneNumber => {
+  phoneNumber = phoneNumber.replace(/\D/g, '');
+  const length = phoneNumber.length;
+  if (length === 5) {
+    return `${phoneNumber.substring(0, 3)}-${phoneNumber.substring(3)}`;
+  } else if (length === 6) {
+    return `${phoneNumber.substring(0, 2)}-${phoneNumber.substring(
+      2,
+      4
+    )}-${phoneNumber.substring(4)}`;
+  } else if (length === 7) {
+    return `${phoneNumber.substring(0, 3)}-${phoneNumber.substring(
+      3,
+      5
+    )}-${phoneNumber.substring(5)}`;
+  } else if (length === 8) {
+    return `${phoneNumber.substring(0, 2)}-${phoneNumber.substring(
+      2,
+      4
+    )}-${phoneNumber.substring(4, 6)}-${phoneNumber.substring(6)}`;
+  } else if (length === 9) {
+    return `${phoneNumber.substring(0, 3)}-${phoneNumber.substring(
+      3,
+      6
+    )}-${phoneNumber.substring(6)}`;
+  } else if (length === 10) {
+    return `${phoneNumber.substring(0, 3)}-${phoneNumber.substring(
+      3,
+      6
+    )}-${phoneNumber.substring(6, 8)}-${phoneNumber.substring(8)}`;
+  } else if (length === 11) {
+    return `${phoneNumber.substring(0, 3)}-${phoneNumber.substring(
+      3,
+      6
+    )}-${phoneNumber.substring(6, 9)}-${phoneNumber.substring(9)}`;
+  } else if (length === 12) {
+    return `${phoneNumber.substring(0, 2)}-${phoneNumber.substring(
+      2,
+      5
+    )}-${phoneNumber.substring(5, 8)}-${phoneNumber.substring(
+      8,
+      10
+    )}-${phoneNumber.substring(10)}`;
+  } else {
+    return phoneNumber;
   }
-
-  const formattedNumber = digits.replace(
-    /(\d{3})(\d{3})(\d{2})(\d{2})/,
-    '$1-$2-$3-$4'
-  );
-
-  return formattedNumber;
-};
-
-export const formatNumber = number => {
-  if (number.length === 7) {
-    return formatLittleNumber(number);
-  }
-  if (number.length === 10) {
-    return formatLargeNumber(number);
-  }
-  if (number.length < 7 || number.length > 10) {
-    return number;
-  }
-  if (number.length >= 11) {
-    console.log('please');
-    return;
-  }
-  return number;
 };

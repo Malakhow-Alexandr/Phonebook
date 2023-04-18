@@ -34,8 +34,8 @@ export const FilterLabel = styled.span`
   position: absolute;
   top: 0px;
   left: 20px;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
+  font-family: 'Alkatra', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
   transition: color 600ms ease-in-out;
 `;

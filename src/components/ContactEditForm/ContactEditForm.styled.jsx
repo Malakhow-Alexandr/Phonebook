@@ -1,34 +1,31 @@
 import styled from '@emotion/styled';
 import { Form, Field } from 'formik';
 
-export const StyledForm = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  gap: 10px;
-  padding: 10px;
-  margin-right: auto;
-`;
-
-export const Label = styled.label`
-  font-family: 'Rubik', sans-serif;
+export const LabelEdit = styled.label`
+  font-family: 'Alkatra', sans-serif;
   position: relative;
   &:not(:last-child) {
     margin-bottom: 15px;
   }
 `;
 
-export const StyledErrorMessage = styled.p`
+export const StyledEditForm = styled(Form)`
+  display: flex;
+  gap: 20px;
+`;
+
+export const StyledErrorEditMessage = styled.p`
   position: absolute;
-  font-family: 'Rubik', sans-serif;
-  top: 6px;
-  left: 250px;
+  font-family: 'Alkatra', sans-serif;
+  width: 150px;
+  top: -210px;
+  left: 160px;
   font-size: 14px;
   color: #ff0015;
 `;
 
-export const StyledField = styled(Field)`
-  width: 230px;
+export const StyledEditField = styled(Field)`
+  width: 150px;
   height: 30px;
   padding: 2px 5px;
   margin: 3px 0;
@@ -48,22 +45,11 @@ export const StyledField = styled(Field)`
     border-color: #f08307;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   }
-  &:focus ~ span {
-    color: #f08307;
-  }
 `;
-
-export const StyledLabel = styled.span`
-  position: absolute;
-  top: -18px;
-  left: 0;
-  font-family: 'Alkatra', sans-serif;
-  transition: color 600ms ease-in-out;
-`;
-
-export const Button = styled.button`
-  width: 130px;
+export const ButtonEdit = styled.button`
+  width: 65px;
   height: 40px;
+  font-size: 13px;
   color: #fff;
   border-radius: 5px;
   font-family: 'Alkatra', sans-serif;
@@ -96,7 +82,7 @@ export const Button = styled.button`
   }
 
   &:hover {
-    color: #fff;
+    color: black;
   }
   &:hover:after {
     left: 0;

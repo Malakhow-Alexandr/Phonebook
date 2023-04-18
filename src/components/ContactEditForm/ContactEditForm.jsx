@@ -2,7 +2,13 @@ import { ErrorMessage, Formik } from 'formik';
 import { validationSchema } from 'utils/contactsValidationSchema';
 import { useDispatch } from 'react-redux';
 import { updateContact } from 'redux/contacts/operation';
-import { Form, Field } from 'formik';
+import {
+  LabelEdit,
+  StyledErrorEditMessage,
+  StyledEditField,
+  StyledEditForm,
+  ButtonEdit,
+} from './ContactEditForm.styled';
 
 export const ContactEditForm = ({ id, initialValues, onSubmit }) => {
   const dispatch = useDispatch();
@@ -22,29 +28,27 @@ export const ContactEditForm = ({ id, initialValues, onSubmit }) => {
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <label>
-          <Field type="text" name="name" />
-          <span>Name</span>
-          <ErrorMessage name="name" />
-        </label>
+      <StyledEditForm>
+        <LabelEdit>
+          <StyledEditField type="text" name="name" />
+          <ErrorMessage component={StyledErrorEditMessage} name="name" />
+        </LabelEdit>
 
-        <label>
-          <Field type="tell" name="number" />
-          <span>Number</span>
-          <ErrorMessage name="number" />
-        </label>
+        <LabelEdit>
+          <StyledEditField type="tell" name="number" />
+          <ErrorMessage component={StyledErrorEditMessage} name="number" />
+        </LabelEdit>
 
-        <button type="submit">Update</button>
-        <button
+        <ButtonEdit type="submit">Update</ButtonEdit>
+        <ButtonEdit
           type="button"
           onClick={() => {
             onSubmit();
           }}
         >
           Cancel
-        </button>
-      </Form>
+        </ButtonEdit>
+      </StyledEditForm>
     </Formik>
   );
 };

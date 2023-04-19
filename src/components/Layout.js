@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AppBar } from './AppBar/AppBar';
 import { Suspense } from 'react';
+// import { Footer } from './Footer/Footer';
 
 export const Layout = () => {
   return (
@@ -11,6 +12,7 @@ export const Layout = () => {
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
+      {/* <Footer /> */}
       <ToastContainer
         position="top-right"
         autoClose={1500}

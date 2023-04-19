@@ -33,7 +33,6 @@ export const RegisterForm = () => {
     const value = event.target.value;
     setPassword(value);
 
-    // Валидация на минимальное количество символов и наличие цифр и букв
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$/;
     if (!passwordRegex.test(value)) {
       setError(true);
@@ -85,7 +84,7 @@ export const RegisterForm = () => {
           error={error}
           helperText={
             error &&
-            'Пароль должен содержать минимум 7 символов и включать цифры и буквы'
+            'The password must contain at least 7 characters and include numbers and letters!'
           }
           inputProps={{ minLength: 7 }}
         />

@@ -11,7 +11,6 @@ import { toast } from 'react-toastify';
 import { fetchContacts } from 'redux/contacts/operation';
 import { selectIsLoading, selectError } from 'redux/contacts/selectors';
 import { Weather } from 'components/Weather/WeatherApp';
-import { motion, AnimatePresence } from 'framer-motion';
 
 import { WeatherButton } from 'components/WeatherButton/WeatherButton.styled';
 

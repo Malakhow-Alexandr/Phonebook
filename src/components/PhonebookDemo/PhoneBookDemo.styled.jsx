@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import demopic from '../../images/image_2023-04-18_22-21-07.png';
+import demopic from '../../images/demoPick.jpg';
 
 export const PhoneBookDemoContainer = styled.section`
   position: relative;

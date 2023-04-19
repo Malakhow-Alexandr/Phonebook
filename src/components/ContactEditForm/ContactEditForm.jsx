@@ -9,6 +9,7 @@ import {
   StyledEditForm,
   ButtonEdit,
 } from './ContactEditForm.styled';
+import PropTypes from 'prop-types';
 
 export const ContactEditForm = ({ id, initialValues, onSubmit }) => {
   const dispatch = useDispatch();
@@ -51,4 +52,13 @@ export const ContactEditForm = ({ id, initialValues, onSubmit }) => {
       </StyledEditForm>
     </Formik>
   );
+};
+
+ContactEditForm.propTypes = {
+  id: PropTypes.string.isRequired,
+  initialValues: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+    onSubmit: PropTypes.func.isRequired,
+  }),
 };

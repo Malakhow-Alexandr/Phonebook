@@ -48,7 +48,7 @@ export const StyledEditField = styled(Field)`
 `;
 export const ButtonEdit = styled.button`
   width: 65px;
-  height: 40px;
+  height: 35px;
   font-size: 13px;
   color: #fff;
   border-radius: 5px;

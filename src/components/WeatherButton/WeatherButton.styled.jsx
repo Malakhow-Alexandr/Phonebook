@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const WeatherButton = styled.button`
   position: absolute;
-  top: -55px;
+  top: -58px;
   left: 350px;
   padding: 0;
   border: none;

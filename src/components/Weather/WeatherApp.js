@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export const Weather = ({ onMount }) => {
   const [query, setQuery] = useState('');
-  const [isOpen, setIsOpen] = useState(false);
   const [weather, setWeather] = useState({
     data: {},
     error: false,

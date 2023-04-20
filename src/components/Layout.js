@@ -3,16 +3,21 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AppBar } from './AppBar/AppBar';
 import { Suspense } from 'react';
-// import { Footer } from './Footer/Footer';
+import { Footer } from './Footer/Footer';
+import { LayoutStyled } from './Container/Layout.styled';
 
 export const Layout = () => {
   return (
-    <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+    <LayoutStyled
+      style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}
+    >
       <AppBar />
       <Suspense fallback={null}>
-        <Outlet />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
       </Suspense>
-      {/* <Footer /> */}
       <ToastContainer
         position="top-right"
         autoClose={1500}
@@ -25,6 +30,6 @@ export const Layout = () => {
         pauseOnHover
         theme="dark"
       />
-    </div>
+    </LayoutStyled>
   );
 };

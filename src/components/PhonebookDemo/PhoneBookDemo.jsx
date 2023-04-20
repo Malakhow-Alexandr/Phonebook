@@ -4,21 +4,33 @@ import {
   PhoneBookDemoDescContainer,
   DemoTitleStyled,
   DemoDescStyled,
+  LinkStyled,
 } from './PhoneBookDemo.styled';
+import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import { useSelector } from 'react-redux';
 
 export const PhoneBookDemo = () => {
+  const isLogged = useSelector(selectIsLoggedIn);
   return (
     <PhoneBookDemoContainer>
       <PhoneBookDemoDescContainer>
         <DemoTitleStyled>React Contacts Book</DemoTitleStyled>
         <DemoDescStyled>
-          Our React application, "Contacts Book", is a secure and private
-          solution for storing and managing contacts. Login functionality and a
-          private backend ensure data confidentiality. It's a performant and
-          scalable application built with React.
+          Secure, private React app for contacts management with Redux, React
+          Router, Material-UI, Formik, Axios, and Framer Motion. Highly
+          performant and scalable.
         </DemoDescStyled>
       </PhoneBookDemoDescContainer>
-      <PhoneBookDemoStyledPicture></PhoneBookDemoStyledPicture>
+      <PhoneBookDemoStyledPicture role="DemoPicture" />
+      {isLogged ? (
+        <LinkStyled to="/contacts">
+          <span>Contacts</span>
+        </LinkStyled>
+      ) : (
+        <LinkStyled to="/login">
+          <span>Sign In</span>
+        </LinkStyled>
+      )}
     </PhoneBookDemoContainer>
   );
 };

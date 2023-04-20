@@ -6,7 +6,6 @@ export const Container = styled.div`
   border-radius: 5px;
   width: 600px;
   margin: auto;
-  margin-top: 45px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +32,7 @@ export const HomeTitleContainer = styled.div`
   width: 600px;
   height: 80px;
   margin: auto;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   display: flex;
   justify-content: center;
   background: #31302f;

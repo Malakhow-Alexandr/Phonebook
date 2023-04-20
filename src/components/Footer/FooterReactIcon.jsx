@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 const AnimatedReactIcon = styled(motion.div)`
   transform: translate(-50%, -50%);
   position: relative;
+  left: 14px;
   margin-left: 3px;
   width: 30px;
   height: 27px;

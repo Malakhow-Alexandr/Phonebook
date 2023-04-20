@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { FaReact } from 'react-icons/fa';
 
 export const FooterContainerStyled = styled.footer`
   display: flex;
